@@ -8,7 +8,11 @@ export class HeroesService {
     console.log('Servicio listo para usar!!!');
   }
 
-  getHeroes(): Heroes[] {
+  getHeroe(idx: number): any {
+    return this.getHeroes()[idx];
+  }
+
+  getHeroes(): Heroe[] {
     return [
       {
         nombre: "Aquaman",
@@ -63,7 +67,7 @@ export class HeroesService {
   }
 }
 
-export interface Heroes{
+export interface Heroe{
   nombre: string;
   bio: string;
   img: string;

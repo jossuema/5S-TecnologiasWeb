@@ -1,7 +1,7 @@
 <h1><small> Marvel y DC</small></h1>
 <hr>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col" *ngFor="let hero of heroes">
+<div class="row row-cols-1 row-cols-md-3 g-4 animate__animated animate__fadeInLeft">
+  <div class="col" *ngFor="let hero of heroes; let i = index">
     <div class="card h-100">
       <img src="{{ hero.img }}" class="card-img-top" alt="{{ hero.nombre }}">
       <div class="card-body">
@@ -11,7 +11,7 @@
         <p class="card-text"><small class="text-muted">{{ hero.casa }}</small></p>
         <hr>
         <p class="card-text"><small class="text-muted">{{ hero.aparicion }}</small></p>
-        <button type="button" class="btn btn-primary">Ver más</button>
+        <button type="button" class="btn btn-primary" (click)="verHeroe(i)">Ver más</button>
       </div>
     </div>
   </div>

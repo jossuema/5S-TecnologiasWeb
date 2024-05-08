@@ -7,6 +7,6 @@ export const routes: Route[] = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'heroes', component: HeroesComponent },
+    { path: 'heroe/:id', component: HeroesComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
-
