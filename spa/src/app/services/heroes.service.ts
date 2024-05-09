@@ -12,6 +12,21 @@ export class HeroesService {
     return this.getHeroes()[idx];
   }
 
+  getHeroesBusqueda(termino: string): Heroe[] {
+    const heroes: Heroe[] = this.getHeroes();
+    const heroesFiltrados: Heroe[] = [];
+    termino = termino.toLowerCase();
+
+    for (const heroe of heroes) {
+      const nombre = heroe.nombre.toLowerCase();
+      if (nombre.indexOf(termino) >= 0) {
+        heroesFiltrados.push(heroe);
+      }
+    }
+
+    return heroesFiltrados;
+  }
+
   getHeroes(): Heroe[] {
     return [
       {

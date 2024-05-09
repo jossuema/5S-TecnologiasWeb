@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Heroe, HeroesService } from '../../services/heroes.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
@@ -10,13 +10,20 @@ import { Router } from '@angular/router';
 export class HeroesComponent {
   heroes:Heroe[] = [];
   constructor(private _heroesService: HeroesService,
-    private router:Router
+    private router:Router,
+    private route : ActivatedRoute
   ){
     
   }
 
   ngOnInit(): void {
     this.heroes = this._heroesService.getHeroes();
+    this.route.params.subscribe(params => {
+      const termino = params['termino'];
+      if(termino){
+        this.heroes = this._heroesService.getHeroesBusqueda(termino);
+      }
+    });
     console.log(this.heroes);
   }
 

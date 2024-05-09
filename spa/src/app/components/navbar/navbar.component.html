@@ -20,5 +20,9 @@
               </li>
             </ul>
           </div>
+          <!-- buscar -->
+          <form class="d-flex" (submit)="buscarHeroe(searchInput.value); $event.preventDefault()">
+            <input #searchInput class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
         </div>
       </nav>

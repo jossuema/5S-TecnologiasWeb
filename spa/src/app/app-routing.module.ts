@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'about',component:AboutComponent},
   {path:'heroes',component:HeroesComponent},
   {path:'heroe/:id',component:HeroeComponent},
+  {path:'heroes/buscar/:termino',component:HeroesComponent},
   {path:'**', pathMatch:'full',redirectTo:'home'},
 ];
 
