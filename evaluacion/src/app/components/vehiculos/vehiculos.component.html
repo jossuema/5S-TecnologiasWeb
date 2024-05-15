@@ -1,0 +1,29 @@
+<h1><small> Vehiculos </small></h1>
+<hr>
+<div class="row row-cols-1 row-cols-md-3 g-4 animate__animated animate__fadeInLeft">
+    <div class="col-12 row-cols-1">
+        <button type="button" class="btn btn-outline-primary" (click)="mostrarTodos()">TODOS</button>
+        <button type="button" class="btn btn-outline-primary" (click)="mostrarVMasMantenimiento()">VEHICULO CON MAS MANTENIMINETOS</button>
+        <button type="button" class="btn btn-outline-primary" (click)="mostrarVehiculosPorAnio()">ORDENAR VEHICULOS POR AÑO</button>
+        <button type="button" class="btn btn-outline-primary" (click)="mostrarMarcaMasPopular()">MARCA MAS POPULAR</button>
+
+        
+        <form class="d-flex" (submit)="busquedaPorMantenimiento(palabra); $event.preventDefault()">
+            <input name="palabra" [(ngModel)]="palabra"type="text" class="form-control" placeholder="Buscar por mantenimiento">
+        </form>
+    </div>
+
+    <div class="col" *ngFor="let vehi of vehiculosFiltrados">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{vehi.placa}}</h5>
+                <p class="card-text">{{vehi.marca}}</p>
+                <hr>
+                <p class="card-text">{{vehi.mantenimiento}}<small class="text-muted"></small></p>
+                <hr>
+                <p class="card-text">{{vehi.anio}}<small class="text-muted"></small></p>
+                <p class="card-text">{{vehi.color}}<small class="text-muted"></small></p>
+            </div>
+        </div>
+    </div>
+</div>

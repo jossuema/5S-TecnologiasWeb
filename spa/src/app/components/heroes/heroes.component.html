@@ -1,6 +1,8 @@
 <h1><small> Marvel y DC</small></h1>
 <hr>
 <div class="row row-cols-1 row-cols-md-3 g-4 animate__animated animate__fadeInLeft">
+
+
   <div class="col" *ngFor="let hero of heroes; let i = index">
     <div class="card h-100">
       <img src="{{ hero.img }}" class="card-img-top" alt="{{ hero.nombre }}">
