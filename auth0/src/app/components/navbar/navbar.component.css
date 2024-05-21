@@ -1,0 +1,8 @@
+/* navbar.component.css */
+.navbar {
+    border-bottom: 3px solid #bbb;
+}
+
+.nav-link {
+    font-size: 1.1em; /* Ajusta el tamaño del texto */
+}
