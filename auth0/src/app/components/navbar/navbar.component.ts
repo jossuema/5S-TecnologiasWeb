@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  profile$ = this.auth.user$;
   constructor(private router: Router, public auth: AuthService){
     
   }
