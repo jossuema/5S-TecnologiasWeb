@@ -8,6 +8,8 @@ import { PreciosComponent } from './components/precios/precios.component';
 import { ProtegidaComponent } from './components/protegida/protegida.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AuthModule } from '@auth0/auth0-angular';
+import { TemplateFormsComponent } from './template-forms/template-forms.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { AuthModule } from '@auth0/auth0-angular';
     PreciosComponent,
     NavbarComponent,
     ProtegidaComponent,
-    ProtegidaComponent
+    ProtegidaComponent,
+    TemplateFormsComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { AuthModule } from '@auth0/auth0-angular';
       authorizationParams: {
         redirect_uri: window.location.origin
       }
-    })
+    }),
+    FormsModule
   ],
   providers: [
     provideClientHydration()

@@ -17,10 +17,10 @@
         </li>
       </ul>
     </div>
-      <div class="d-flex justify-content-end">
-        <p *ngIf="(auth.isAuthenticated$ | async) === true" class="text-white mx-2">Hola {{ (profile$ | async)?.name }}</p>
-        <img *ngIf="(auth.isAuthenticated$ | async) === true" [src]="(profile$ | async)?.picture" alt="profile" class="rounded-circle mx-2" style="width: 40px; height: 40px;">
-      </div>
+    <div class="d-flex justify-content-end">
+      <p *ngIf="(auth.isAuthenticated$ | async) === true" class="text-white mx-2">Hola {{ (profile$ | async)?.name }}</p>
+      <img *ngIf="(auth.isAuthenticated$ | async) === true" [src]="(profile$ | async)?.picture" alt="profile" class="rounded-circle mx-2" style="width: 40px; height: 40px;">
+    </div>
     <form class="d-flex" role="search">
         <button *ngIf="(auth.isAuthenticated$ | async) === false" class="btn btn-outline-success" (click)="login()">Iniciar sesion</button>
         <button *ngIf="(auth.isAuthenticated$ | async) === true" class="btn btn-outline-danger" (click)="logout()">Salir de la sesion</button>
