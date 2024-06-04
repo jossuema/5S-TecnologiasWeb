@@ -1,0 +1,33 @@
+<h1><small> Rutas </small></h1>
+<hr>
+<div class="row row-cols-1 row-cols-md-3 g-4 animate__animated animate__fadeInLeft">
+    <div class="col-12 row-cols-1">
+        <button type="button" class="btn btn-outline-primary" (click)="mostrarTodos()">TODOS</button>
+        <button type="button" class="btn btn-outline-primary" (click)="mostrarExternos()">Externos</button>
+        <button type="button" class="btn btn-outline-primary" (click)="mostrarInternos()">Internos</button>
+        
+        <form class="d-flex" (submit)="busquedaCiudad(palabra); $event.preventDefault()">
+            <input name="palabra" [(ngModel)]="palabra"type="text" class="form-control" placeholder="Buscar por ciudad">
+        </form>
+    </div>
+
+    <div class="col" *ngFor="let ruta of rutasFiltradas">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ruta.CiudadOrigen}}</h5>
+                <h5 class="card-title">{{ruta.CiudadDestino}}</h5>
+                <hr>
+                <p class="card-text">{{ruta.Precio}}<small class="text-muted"></small></p>
+                <hr>
+                <p class="card-text">{{ruta.Descripcion}}<small class="text-muted"></small></p>
+                <p class="card-text">{{ruta.Tipo}}<small class="text-muted"></small></p>
+                <div class="dropdownn">
+                    <a href="javascript:void(0);">Descripcion</a>
+                    <div class="dropdown-menu">
+                        {{ruta.Descripcion}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
