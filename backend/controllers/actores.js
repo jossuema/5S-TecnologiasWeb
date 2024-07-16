@@ -80,4 +80,18 @@ const deleteActor = async (req, res) => {
     }
 }
 
-module.exports = {getActores, getActorById, getActorByName, insertActor, deleteActor};
+const updateActor = async (req, res) => {
+    try {
+        const { codigo, nombre, nombre_rea, fecha_nac, fecha_mue, nacionalidad } = req.body;
+        const client = await pool.connect();
+        console.log('Connected to the database');
+        const response = await pool.query('UPDATE actores SET nom_act = $1, nom_rea_act = $2, fec_nac_act = $3, fec_mue_act = $4, naciona_act = $5 WHERE cod_act = $6', [nombre, nombre_rea, fecha_nac, fecha_mue, nacionalidad, codigo]);
+        client.release();
+        res.json(`Actor ${codigo} updated successfully`);
+    } catch (e) {
+        console.log(e);
+        res.status(500).send('Something went wrong');
+    }
+}
+
+module.exports = {getActores, getActorById, getActorByName, insertActor, deleteActor, updateActor};
