@@ -5,7 +5,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //routes
-app.use(require('./routes/actores'));
+app.use(require('./routes/employees'));
+app.use(require('./routes/departments'));
 
 app.listen(3000, () => {
     console.log('Server started on http://localhost:3000');
