@@ -9,6 +9,8 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesService } from './services/heroes.service';
 import { HeroeComponent } from './components/heroe/heroe.component';
+import { CreateheroeComponent } from './components/createheroe/createheroe.component';
+import { FormHeroeComponent } from './components/form-heroe/form-heroe.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HeroeComponent } from './components/heroe/heroe.component';
     HomeComponent,
     HeroesComponent,
     AboutComponent,
-    HeroeComponent
+    HeroeComponent,
+    CreateheroeComponent,
+    FormHeroeComponent
   ],
   imports: [
     BrowserModule,
